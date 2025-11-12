@@ -23,6 +23,10 @@ public class Calculator {
     }
 
     public int div(int i, int i1) {
-        return i / i1;
+        if (i >= Integer.MAX_VALUE || i1 == 0)
+            throw new ArithmeticException("Number cannot 0 or be greater than or equal to Integer.MAX_VALUE");
+        int result = i/i1;
+        return result;
+
     }
 }
