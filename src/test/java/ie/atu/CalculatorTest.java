@@ -60,4 +60,11 @@ public class CalculatorTest {
         assertEquals("Number cannot be greater than or equal to Integer.MAX_VALUE", ex.getMessage());
     }
 
+    @Test
+    public void testDiv_Fail()
+    {
+        Exception ex = assertThrows(ArithmeticException.class, ()-> calc.div(Integer.MAX_VALUE, 0));
+        assertEquals("Number cannot 0 or be greater than or equal to Integer.MAX_VALUE", ex.getMessage());
+    }
+
 }
